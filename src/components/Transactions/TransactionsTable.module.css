@@ -1,0 +1,26 @@
+.transactionsHistory {
+  width: 500px;
+  text-align: center;
+  margin: 10px auto;
+  box-shadow: 0px 3px 8px -4px #000000;
+  table-layout: fixed;
+}
+.transactionsHistory > thead {
+  color: white;
+  background-color: #1bb1e8;
+  text-transform: uppercase;
+  font-size: 12px;
+  height: 50px;
+}
+
+.transactionsHistory td {
+  text-align: center;
+  padding: 20px;
+  font-weight: 300;
+  width: 100%;
+}
+.transactionsHistory > tbody > tr :first-child {
+  text-transform: capitalize;
+  text-align: left;
+  padding-left: 60px;
+}
