@@ -6,14 +6,14 @@ import { friendGetColor } from './FriendGetColor';
 export function FriendsList({ friends }) {
   return (
     <ul className={css.friendsList}>
-      {friends.map(({ name, avatar, isOnline }) => {
+      {friends.map(({ name, avatar, isOnline, id }) => {
         return (
           // <Friend
           //   avatar={friend.avatar}
           //   name={friend.name}
           //   isOnline={friend.isOnline}
           // />
-          <li className={css.item} key={name}>
+          <li className={css.item} key={id}>
             <span
               className={css.status}
               style={{
@@ -34,12 +34,13 @@ export function FriendsList({ friends }) {
   );
 }
 
-FriendsList.prototype = {
+FriendsList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.exact({
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
     })
   ),
 };

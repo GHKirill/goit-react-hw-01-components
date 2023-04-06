@@ -25,11 +25,11 @@ export function TransactionTable({ transactions }) {
     </table>
   );
 }
-TransactionTable.prototype = {
+TransactionTable.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.exact({
       type: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
     })
