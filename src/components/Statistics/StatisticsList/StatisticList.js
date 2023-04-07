@@ -1,27 +1,17 @@
 import PropTypes from 'prop-types';
-
-import css from 'components/Statistics/StatisticsList/StatList.module.css';
 import { randomColor } from './StatisticsListRandomColor';
+import { StatList, Item, Label, Percentage } from './Statistics.styled';
 
 export function StatisticList({ items }) {
   return (
-    <ul className={css.statList}>
+    <StatList>
       {items.map(({ id, label, percentage }) => (
-        // <StatisticItem
-        //   id={item.id}
-        //   label={item.label}
-        //   percentage={item.percentage}
-        // />
-        <li
-          key={id}
-          style={{ backgroundColor: randomColor() }}
-          className={css.item}
-        >
-          <span className={css.label}>{label}</span>
-          <span className={css.percentage}>{percentage}%</span>
-        </li>
+        <Item key={id} style={{ backgroundColor: randomColor() }}>
+          <Label>{label}</Label>
+          <Percentage>{percentage}%</Percentage>
+        </Item>
       ))}
-    </ul>
+    </StatList>
   );
 }
 StatisticList.propTypes = {

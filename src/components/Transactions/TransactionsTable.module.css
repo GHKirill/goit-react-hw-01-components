@@ -21,6 +21,8 @@
 }
 .transactions-history > tbody > tr :first-child {
   text-transform: capitalize;
-  text-align: left;
+  text-align: right;
   padding-left: 60px;
 }
+/*  */
+/* hhhh */

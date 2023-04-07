@@ -1,35 +1,43 @@
 import PropTypes from 'prop-types';
-import css from 'components/Profile/Profile.module.css';
 import { numberFormatted } from './Number_normalize';
+import {
+  ProfileTag,
+  Description,
+  Image,
+  Name,
+  Tag,
+  Location,
+  Stats,
+  Label,
+  Quantity,
+} from './Profile.styled';
 
 export function Profile({ userName, tag, location, avatar, stats }) {
   return (
     <div>
-      <div className={css.profile}>
-        <div className={css.description}>
-          <img src={avatar} alt="User avatar" className={css.avatar} />
-          <p className={css.name}>{userName}</p>
-          <p className={css.tag}>@{tag}</p>
-          <p className={css.location}>{location}</p>
-        </div>
+      <ProfileTag>
+        <Description>
+          <Image src={avatar} alt="User avatar" />
+          <Name>{userName}</Name>
+          <Tag>@{tag}</Tag>
+          <Location>{location}</Location>
+        </Description>
 
-        <ul className={css.stats}>
+        <Stats>
           <li>
-            <span className={css.label}>Followers</span>
-            <span className={css.quantity}>
-              {numberFormatted(stats.followers)}
-            </span>
+            <Label>Followers</Label>
+            <Quantity>{numberFormatted(stats.followers)}</Quantity>
           </li>
           <li>
-            <span className={css.label}>Views</span>
-            <span className={css.quantity}>{numberFormatted(stats.views)}</span>
+            <Label>Views</Label>
+            <Quantity>{numberFormatted(stats.views)}</Quantity>
           </li>
           <li>
-            <span className={css.label}>Likes</span>
-            <span className={css.quantity}>{numberFormatted(stats.likes)}</span>
+            <Label>Likes</Label>
+            <Quantity>{numberFormatted(stats.likes)}</Quantity>
           </li>
-        </ul>
-      </div>
+        </Stats>
+      </ProfileTag>
     </div>
   );
 }
